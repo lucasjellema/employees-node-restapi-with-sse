@@ -3,6 +3,7 @@ package employee_api
 as
 
 function get_employees
+( p_dept_id in number default null)
 return employee_list_t
 ;
 
@@ -10,6 +11,37 @@ function get_employee
 ( p_id in number
 ) return employee_t
 ;
+
+procedure create_employee
+( p_emp in employee_t
+, p_result out varchar2) 
+;
+
+procedure update_employee
+( p_emp in employee_t
+, p_result out varchar2) 
+;
+
+
+procedure delete_employee
+( p_id in number
+, p_result out varchar2) 
+;
+
+function get_departments
+return department_list_t
+;
+
+
+function get_department
+(p_id in number)
+return department_t
+;
+procedure  create_department
+( p_department  in department_t
+, p_result out varchar2)
+;
+
 
 function get_presidential_votes
 return sys_refcursor;
@@ -26,6 +58,8 @@ function get_vote_count_for_employee
 
 end employee_api;
 /
+
+
 
 
 
@@ -68,6 +102,7 @@ begin
 end vote_for_employee;
 
 function get_employees
+( p_dept_id in number default null)
 return employee_list_t
 is
   l_employee_list employee_list_t;
@@ -76,6 +111,7 @@ begin
          ( multiset 
            ( select employee_summary_t(e.empno, e.ename, e.job, (select count(*) votes from presidential_election pe where pe.empno = e.empno))
              from   emp e
+             where  e.deptno = nvl(p_dept_id, e.deptno)
             )
           as employee_list_t
         )
@@ -151,8 +187,110 @@ begin
 end get_presidential_votes;
 
 
+
+
+procedure create_employee
+( p_emp in employee_t
+, p_result out varchar2) 
+is 
+begin
+  insert into emp
+  (empno, ename, deptno, job, sal, hiredate, comm, mgr)
+  values
+  (p_emp.id, p_emp.name, p_emp.department_id, p_emp.job, p_emp.salary, p_emp.hiredate, p_emp.commission
+  , case p_emp.manager when null then null else p_emp.manager.id end);
+  p_result := 'OK';
+end create_employee;
+
+
+procedure update_employee
+( p_emp in employee_t
+, p_result out varchar2) 
+is 
+begin
+  update emp e
+  set    e.ename = p_emp.name
+  ,      e.job= p_emp.job
+  ,      e.sal = p_emp.salary
+  ,      e.comm = p_emp.commission
+  ,      e.hiredate = p_emp.hiredate
+  ,      e.deptno = p_emp.department_id
+  ,      e.mgr = case p_emp.manager when null then null else p_emp.manager.id end
+  where  e.empno = p_emp.id
+  ;
+  p_result := 'OK';
+end update_employee;
+
+
+procedure delete_employee
+( p_id in number
+, p_result out varchar2) 
+is 
+begin
+  delete emp where empno = p_id;
+  p_result := 'OK';
+end delete_employee;
+
+
+function get_departments
+return department_list_t
+is 
+  l_department_list department_list_t;
+begin
+  select cast
+         ( multiset 
+           ( select department_summary_t(d.deptno, d.dname, d.loc)
+             from   dept d
+            )
+          as department_list_t
+        )
+  into l_department_list
+  from dual
+  ;
+  return l_department_list;
+end get_departments;
+
+
+
+function get_department
+(p_id in number)
+return department_t
+is 
+ l_dept department_t ;
+begin
+  select department_t( d.deptno, d.dname, d.loc
+                 , (select sum(sal) from emp e where d.deptno = e.deptno)
+                 , (select count(empno) from emp e where d.deptno = e.deptno)
+                 )   
+  into  l_dept
+  from  dept d
+  where d.deptno = p_id
+  ;  
+  return l_dept;
+end get_department;
+
+procedure  create_department
+( p_department  in department_t
+, p_result out varchar2)
+is 
+begin
+  insert into dept
+  (deptno, dname, loc)
+  values
+  ( p_department.id, p_department.name, p_department.location);
+  p_result := 'OK';
+end create_department;
+
+
 end employee_api;
-/
+
+
+
+
+
+
+
+
 -- some queries that can now be performed:
 
 select employee_api.get_employees

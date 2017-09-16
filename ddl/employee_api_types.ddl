@@ -65,6 +65,25 @@ create or replace
 type employee_list_t force as table of employee_summary_t;
 /
 
+create or replace type department_t force as object (
+  id                number(10,0)
+, name              varchar2(50)
+, location          varchar2(50)
+, salary_sum        number(10,2)
+, employees_count   number(5)
+)
+/
+
+create or replace type department_summary_t force as object (
+  id                number(10,0)
+, name              varchar2(50)
+, location          varchar2(50)
+)
+/
+
+create or replace 
+type department_list_t force as table of department_summary_t;
+/
 
 
 create or replace 
