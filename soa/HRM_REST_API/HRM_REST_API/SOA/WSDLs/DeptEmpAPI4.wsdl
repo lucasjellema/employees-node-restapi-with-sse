@@ -1,0 +1,40 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="DeptEmpAPI4"
+     targetNamespace="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI4"
+     xmlns:tns="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI4"
+     xmlns:inp1="DeptEmpAPI4_getDepartmentDetails_response"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+    <plnk:partnerLinkType name="DeptEmpAPI4">
+        <plnk:role name="DeptEmpAPI4Provider" portType="tns:DeptEmpAPI4_ptt"/>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="DeptEmpAPI4_getDepartmentDetails_response" schemaLocation="../Schemas/nxsd_empdept_departmentDetails_json.xsd"/>
+        </xsd:schema>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI4"
+             elementFormDefault="qualified">
+            <element name="getDepartmentDetails_params">
+                <complexType>
+                    <sequence>
+                        <element name="departmentId" type="string"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="getDepartmentDetails_inputMessage">
+        <wsdl:part name="request" element="tns:getDepartmentDetails_params"/>
+    </wsdl:message>
+    <wsdl:message name="getDepartmentDetails_outputMessage">
+        <wsdl:part name="reply" element="inp1:Department"/>
+    </wsdl:message>
+    <wsdl:portType name="DeptEmpAPI4_ptt">
+        <wsdl:operation name="getDepartmentDetails">
+            <wsdl:input message="tns:getDepartmentDetails_inputMessage"/>
+            <wsdl:output message="tns:getDepartmentDetails_outputMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

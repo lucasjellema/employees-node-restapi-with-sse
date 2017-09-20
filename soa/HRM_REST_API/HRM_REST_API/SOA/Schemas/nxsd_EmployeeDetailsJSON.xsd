@@ -1,0 +1,36 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="RestEMPService_getEmployeeDetails_response"
+            targetNamespace="RestEMPService_getEmployeeDetails_response" elementFormDefault="qualified"
+            xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd" nxsd:version="JSON" nxsd:encoding="UTF-8">
+    <xsd:element name="Employee">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="name" type="xsd:string"/>
+        <xsd:element name="id" type="xsd:integer"/>
+        <xsd:element name="job" type="xsd:string"/>
+        <xsd:element name="hiredate" type="xsd:dateTime"/>
+        <xsd:element name="salary" type="xsd:integer"/>
+        <xsd:element name="commission" type="xsd:integer"/>
+        <xsd:element name="departmentId" type="xsd:integer"/>
+        <xsd:element name="managerId" type="xsd:integer"/>
+        <xsd:element name="departmentName" type="xsd:string"/>
+        <xsd:element name="departmentLocation" type="xsd:string"/>
+        <xsd:element name="managerName" type="xsd:string"/>
+        <xsd:element name="managerJob" type="xsd:string"/>
+        <xsd:element name="staff">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="id" type="xsd:integer"/>
+              <xsd:element name="name" type="xsd:string"/>
+              <xsd:element name="job" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:annotation xmlns="">
+    <xsd:appinfo>NXSDSAMPLE=</xsd:appinfo>
+    <xsd:appinfo>USEHEADER=false</xsd:appinfo>
+  </xsd:annotation>
+</xsd:schema>

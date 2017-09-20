@@ -1,0 +1,19 @@
+{
+  "name" : "FORD",
+  "id" : 7902,
+  "job" : "ANALYST",
+  "hiredate" : "1981-12-03T00:00:00.000+00:00",
+  "salary" : 3000,
+  "commission" : null,
+  "departmentId" : 20,
+  "managerId" : 7566,
+  "departmentName" : "Research",
+  "departmentLocation" : "Dallas",
+  "managerName" : "JONES",
+  "managerJob" : "MANAGER",
+  "staff" : {
+    "id" : 7369,
+    "name" : "SMITH",
+    "job" : "CLERK"
+  }
+}

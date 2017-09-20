@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dgm:gDiagram xmlns:dgm="http://xmlns.oracle.com/sca/soadgm">
+    <dgm:gService name="HRMRestAPI">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="791" width="137" height="144">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="784" width="156" height="158">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="HRMRestAPI" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/HRMRestAPI#wsdl.interface(HRMRestAPI_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>GetDepartments</dgm:item>
+            <dgm:item>CreateDepartment</dgm:item>
+            <dgm:item>getDepartmentDetails</dgm:item>
+            <dgm:item>getEmployees</dgm:item>
+            <dgm:item>createEmployee</dgm:item>
+            <dgm:item>getEmployeeDetails</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gService name="DeptRestService">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="510" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="503" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="DeptRestService" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptRestService#wsdl.interface(DeptRestService_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>getDepartmentDetails</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gService name="DeptEmpAPI">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="1087" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="1080" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="DeptEmpAPI" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI#wsdl.interface(DeptEmpAPI_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>getAllEmployees</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gService name="DeptEmpAPIMediator_ep">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="969" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="962" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="DeptEmpAPIMediator_ep" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI#wsdl.interface(DeptEmpAPI_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>getAllEmployees</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gService name="DeptEmpAPI2">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="1205" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="1198" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="DeptEmpAPI2" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI2#wsdl.interface(DeptEmpAPI2_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>getEmployeeDetails</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gService name="DeptEmpAPI3">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="664" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="657" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="DeptEmpAPI3" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI3#wsdl.interface(DeptEmpAPI3_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>getDepartments</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gService name="DeptEmpAPI4">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="391" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="384" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="DeptEmpAPI4" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI4#wsdl.interface(DeptEmpAPI4_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>getDepartmentDetails</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gService name="DeptEmpAPI5">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="275" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="268" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="DeptEmpAPI5" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI5#wsdl.interface(DeptEmpAPI5_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>DeleteEmployee</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gService name="DeptEmpAPIMediator5_ep">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="157" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="150" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="DeptEmpAPIMediator5_ep" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI5#wsdl.interface(DeptEmpAPI5_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>DeleteEmployee</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gService name="DeptEmpAPI6">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="41" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="34" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="DeptEmpAPI6" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI6#wsdl.interface(DeptEmpAPI6_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>updateEmployee</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gReference name="CreateDepartment">
+        <dgm:body borderWidth="2" arcRad="20" X="1009" Y="616" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="999" Y="609" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="CreateDepartment" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/HRM_REST_API/HRM_REST_API/CreateDepartment#wsdl.interface(CreateDepartment_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>CreateDepartment</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="GetDepartments">
+        <dgm:body borderWidth="2" arcRad="20" X="1009" Y="734" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="999" Y="727" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="GetDepartments" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/HRM_REST_API/HRM_REST_API/GetDepartments#wsdl.interface(GetDepartments_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>GetDepartments</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="getDepartmentDetails">
+        <dgm:body borderWidth="2" arcRad="20" X="1009" Y="498" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="999" Y="491" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="getDepartmentDetails" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/HRM_REST_API/HRM_REST_API/getDepartmentDetails#wsdl.interface(getDepartmentDetails_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>getDepartmentDetails</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="createEmployee">
+        <dgm:body borderWidth="2" arcRad="20" X="1009" Y="852" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="999" Y="845" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="createEmployee" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/HRM_REST_API/HRM_REST_API/createEmployee#wsdl.interface(createEmployee_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>createEmployee</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="getEmployees">
+        <dgm:body borderWidth="2" arcRad="20" X="1009" Y="970" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="999" Y="963" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="getEmployees" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/HRM_REST_API/HRM_REST_API/getEmployees#wsdl.interface(getEmployees_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>getEmployees</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="getEmployeeDetails">
+        <dgm:body borderWidth="2" arcRad="20" X="1009" Y="1088" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="999" Y="1081" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="getEmployeeDetails" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/HRM_REST_API/HRM_REST_API/getEmployeeDetails#wsdl.interface(getEmployeeDetails_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>getEmployeeDetails</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="deleteEmployee">
+        <dgm:body borderWidth="2" arcRad="20" X="1009" Y="216" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="999" Y="209" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="deleteEmployee" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/HRM_REST_API/HRM_REST_API/deleteEmployee#wsdl.interface(deleteEmployee_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>deleteEmployee</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="updateEmployee">
+        <dgm:body borderWidth="2" arcRad="20" X="1009" Y="41" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="999" Y="34" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="updateEmployee" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/HRM_REST_API/HRM_REST_API/updateEmployee#wsdl.interface(updateEmployee_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>updateEmployee</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gComponent name="HrmMediator">
+        <dgm:body borderWidth="2" arcRad="20" X="751" Y="734" width="130" height="186">
+            <dgm:borderColor r="128" g="92" b="148"/>
+            <dgm:lightBgColor r="208" g="169" b="227"/>
+            <dgm:darkBgColor r="183" g="132" b="212"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="741" Y="727" width="150" height="202">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="DepartmentMediator" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/HRMRestAPI#wsdl.interface(HRMRestAPI_ptt)"/>
+        <dgm:inputPort name="HrmMediator" X="-10" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/HRMRestAPI#wsdl.interface(HRMRestAPI_ptt)"/>
+        <dgm:outputPort name="getDepartmentDetails" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/HRM_REST_API/HRM_REST_API/getDepartmentDetails#wsdl.interface(getDepartmentDetails_ptt)"/>
+        <dgm:outputPort name="CreateDepartment" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/HRM_REST_API/HRM_REST_API/CreateDepartment#wsdl.interface(CreateDepartment_ptt)"/>
+        <dgm:outputPort name="GetDepartments" X="120" Y="65" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/HRM_REST_API/HRM_REST_API/GetDepartments#wsdl.interface(GetDepartments_ptt)"/>
+        <dgm:outputPort name="createEmployee" X="120" Y="90" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/HRM_REST_API/HRM_REST_API/createEmployee#wsdl.interface(createEmployee_ptt)"/>
+        <dgm:outputPort name="getEmployees" X="120" Y="115" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/HRM_REST_API/HRM_REST_API/getEmployees#wsdl.interface(getEmployees_ptt)"/>
+        <dgm:outputPort name="getEmployeeDetails" X="120" Y="140" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/HRM_REST_API/HRM_REST_API/getEmployeeDetails#wsdl.interface(getEmployeeDetails_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/mediator/resource/image/mediator_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="DeptMediator">
+        <dgm:body borderWidth="2" arcRad="20" X="510" Y="495" width="130" height="61">
+            <dgm:borderColor r="128" g="92" b="148"/>
+            <dgm:lightBgColor r="208" g="169" b="227"/>
+            <dgm:darkBgColor r="183" g="132" b="212"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="500" Y="488" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="DeptMediator" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptRestService#wsdl.interface(DeptRestService_ptt)"/>
+        <dgm:outputPort name="getDepartmentDetails" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/HRM_REST_API/HRM_REST_API/getDepartmentDetails#wsdl.interface(getDepartmentDetails_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/mediator/resource/image/mediator_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="DeptEmpAPIMediator">
+        <dgm:body borderWidth="2" arcRad="20" X="269" Y="1039" width="130" height="61">
+            <dgm:borderColor r="128" g="92" b="148"/>
+            <dgm:lightBgColor r="208" g="169" b="227"/>
+            <dgm:darkBgColor r="183" g="132" b="212"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="259" Y="1032" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="DeptEmpAPIMediator" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI#wsdl.interface(DeptEmpAPI_ptt)"/>
+        <dgm:outputPort name="getEmployees" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/HRM_REST_API/HRM_REST_API/getEmployees#wsdl.interface(getEmployees_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/mediator/resource/image/mediator_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="DempEmpAPIMediator2">
+        <dgm:body borderWidth="2" arcRad="20" X="510" Y="1190" width="130" height="61">
+            <dgm:borderColor r="128" g="92" b="148"/>
+            <dgm:lightBgColor r="208" g="169" b="227"/>
+            <dgm:darkBgColor r="183" g="132" b="212"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="500" Y="1183" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="DempEmpAPIMediator2" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI2#wsdl.interface(DeptEmpAPI2_ptt)"/>
+        <dgm:outputPort name="getEmployeeDetails" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/HRM_REST_API/HRM_REST_API/getEmployeeDetails#wsdl.interface(getEmployeeDetails_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/mediator/resource/image/mediator_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="DeptEmpAPIMediator3">
+        <dgm:body borderWidth="2" arcRad="20" X="510" Y="649" width="130" height="61">
+            <dgm:borderColor r="128" g="92" b="148"/>
+            <dgm:lightBgColor r="208" g="169" b="227"/>
+            <dgm:darkBgColor r="183" g="132" b="212"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="500" Y="642" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="DeptEmpAPIMediator3" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI3#wsdl.interface(DeptEmpAPI3_ptt)"/>
+        <dgm:outputPort name="GetDepartments" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/HRM_REST_API/HRM_REST_API/GetDepartments#wsdl.interface(GetDepartments_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/mediator/resource/image/mediator_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="DeptEmpAPIMediator4">
+        <dgm:body borderWidth="2" arcRad="20" X="510" Y="376" width="130" height="61">
+            <dgm:borderColor r="128" g="92" b="148"/>
+            <dgm:lightBgColor r="208" g="169" b="227"/>
+            <dgm:darkBgColor r="183" g="132" b="212"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="500" Y="369" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="DeptEmpAPIMediator4" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI4#wsdl.interface(DeptEmpAPI4_ptt)"/>
+        <dgm:outputPort name="getDepartmentDetails" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/HRM_REST_API/HRM_REST_API/getDepartmentDetails#wsdl.interface(getDepartmentDetails_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/mediator/resource/image/mediator_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="DeptEmpAPIMediator5">
+        <dgm:body borderWidth="2" arcRad="20" X="269" Y="227" width="130" height="61">
+            <dgm:borderColor r="128" g="92" b="148"/>
+            <dgm:lightBgColor r="208" g="169" b="227"/>
+            <dgm:darkBgColor r="183" g="132" b="212"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="259" Y="220" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="DeptEmpAPIMediator5" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI5#wsdl.interface(DeptEmpAPI5_ptt)"/>
+        <dgm:outputPort name="deleteEmployee" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/HRM_REST_API/HRM_REST_API/deleteEmployee#wsdl.interface(deleteEmployee_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/mediator/resource/image/mediator_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="DeptEmpAPIMediator6">
+        <dgm:body borderWidth="2" arcRad="20" X="510" Y="26" width="130" height="61">
+            <dgm:borderColor r="128" g="92" b="148"/>
+            <dgm:lightBgColor r="208" g="169" b="227"/>
+            <dgm:darkBgColor r="183" g="132" b="212"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="500" Y="19" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="DeptEmpAPIMediator6" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI6#wsdl.interface(DeptEmpAPI6_ptt)"/>
+        <dgm:outputPort name="updateEmployee" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/HRM_REST_API/HRM_REST_API/updateEmployee#wsdl.interface(updateEmployee_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/mediator/resource/image/mediator_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gWireLink source="HRMRestAPI" target="HrmMediator/DepartmentMediator" width="2">
+        <dgm:gSegment X1="168" Y1="801" X2="674" Y2="801"/>
+        <dgm:gSegment X1="674" Y1="801" X2="674" Y2="759"/>
+        <dgm:gSegment X1="674" Y1="759" X2="741" Y2="759"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="HrmMediator/getDepartmentDetails" target="getDepartmentDetails" width="2">
+        <dgm:gSegment X1="891" Y1="759" X2="930" Y2="759"/>
+        <dgm:gSegment X1="930" Y1="759" X2="930" Y2="508"/>
+        <dgm:gSegment X1="930" Y1="508" X2="999" Y2="508"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="HrmMediator/CreateDepartment" target="CreateDepartment" width="2">
+        <dgm:gSegment X1="891" Y1="784" X2="945" Y2="784"/>
+        <dgm:gSegment X1="945" Y1="784" X2="945" Y2="626"/>
+        <dgm:gSegment X1="945" Y1="626" X2="999" Y2="626"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="HrmMediator/GetDepartments" target="GetDepartments" width="2">
+        <dgm:gSegment X1="891" Y1="809" X2="960" Y2="809"/>
+        <dgm:gSegment X1="960" Y1="809" X2="960" Y2="744"/>
+        <dgm:gSegment X1="960" Y1="744" X2="999" Y2="744"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="HrmMediator/createEmployee" target="createEmployee" width="2">
+        <dgm:gSegment X1="891" Y1="834" X2="960" Y2="834"/>
+        <dgm:gSegment X1="960" Y1="834" X2="960" Y2="862"/>
+        <dgm:gSegment X1="960" Y1="862" X2="999" Y2="862"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="HrmMediator/getEmployees" target="getEmployees" width="2">
+        <dgm:gSegment X1="891" Y1="859" X2="945" Y2="859"/>
+        <dgm:gSegment X1="945" Y1="859" X2="945" Y2="980"/>
+        <dgm:gSegment X1="945" Y1="980" X2="999" Y2="980"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="HrmMediator/getEmployeeDetails" target="getEmployeeDetails" width="2">
+        <dgm:gSegment X1="891" Y1="884" X2="930" Y2="884"/>
+        <dgm:gSegment X1="930" Y1="884" X2="930" Y2="1098"/>
+        <dgm:gSegment X1="930" Y1="1098" X2="999" Y2="1098"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="DeptRestService" target="DeptMediator/DeptMediator" width="2">
+        <dgm:gSegment X1="168" Y1="520" X2="500" Y2="520"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="DeptMediator/getDepartmentDetails" target="getDepartmentDetails" width="2">
+        <dgm:gSegment X1="650" Y1="520" X2="915" Y2="520"/>
+        <dgm:gSegment X1="915" Y1="520" X2="915" Y2="508"/>
+        <dgm:gSegment X1="915" Y1="508" X2="999" Y2="508"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="DeptEmpAPIMediator_ep" target="DeptEmpAPIMediator/DeptEmpAPIMediator" width="2">
+        <dgm:gSegment X1="168" Y1="979" X2="207" Y2="979"/>
+        <dgm:gSegment X1="207" Y1="979" X2="207" Y2="1064"/>
+        <dgm:gSegment X1="207" Y1="1064" X2="259" Y2="1064"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="DeptEmpAPI" target="DeptEmpAPIMediator/DeptEmpAPIMediator" width="2">
+        <dgm:gSegment X1="168" Y1="1097" X2="192" Y2="1097"/>
+        <dgm:gSegment X1="192" Y1="1097" X2="192" Y2="1064"/>
+        <dgm:gSegment X1="192" Y1="1064" X2="259" Y2="1064"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="DeptEmpAPIMediator/getEmployees" target="getEmployees" width="2">
+        <dgm:gSegment X1="409" Y1="1064" X2="433" Y2="1064"/>
+        <dgm:gSegment X1="433" Y1="1064" X2="433" Y2="980"/>
+        <dgm:gSegment X1="433" Y1="980" X2="999" Y2="980"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="DeptEmpAPI2" target="DempEmpAPIMediator2/DempEmpAPIMediator2" width="2">
+        <dgm:gSegment X1="168" Y1="1215" X2="500" Y2="1215"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="DempEmpAPIMediator2/getEmployeeDetails" target="getEmployeeDetails" width="2">
+        <dgm:gSegment X1="650" Y1="1215" X2="915" Y2="1215"/>
+        <dgm:gSegment X1="915" Y1="1215" X2="915" Y2="1098"/>
+        <dgm:gSegment X1="915" Y1="1098" X2="999" Y2="1098"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="DeptEmpAPI3" target="DeptEmpAPIMediator3/DeptEmpAPIMediator3" width="2">
+        <dgm:gSegment X1="168" Y1="674" X2="500" Y2="674"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="DeptEmpAPIMediator3/GetDepartments" target="GetDepartments" width="2">
+        <dgm:gSegment X1="650" Y1="674" X2="975" Y2="674"/>
+        <dgm:gSegment X1="975" Y1="674" X2="975" Y2="744"/>
+        <dgm:gSegment X1="975" Y1="744" X2="999" Y2="744"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="DeptEmpAPI4" target="DeptEmpAPIMediator4/DeptEmpAPIMediator4" width="2">
+        <dgm:gSegment X1="168" Y1="401" X2="500" Y2="401"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="DeptEmpAPIMediator4/getDepartmentDetails" target="getDepartmentDetails" width="2">
+        <dgm:gSegment X1="650" Y1="401" X2="945" Y2="401"/>
+        <dgm:gSegment X1="945" Y1="401" X2="945" Y2="508"/>
+        <dgm:gSegment X1="945" Y1="508" X2="999" Y2="508"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="DeptEmpAPIMediator5_ep" target="DeptEmpAPIMediator5/DeptEmpAPIMediator5" width="2">
+        <dgm:gSegment X1="168" Y1="167" X2="207" Y2="167"/>
+        <dgm:gSegment X1="207" Y1="167" X2="207" Y2="252"/>
+        <dgm:gSegment X1="207" Y1="252" X2="259" Y2="252"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="DeptEmpAPIMediator5/deleteEmployee" target="deleteEmployee" width="2">
+        <dgm:gSegment X1="409" Y1="252" X2="433" Y2="252"/>
+        <dgm:gSegment X1="433" Y1="252" X2="433" Y2="226"/>
+        <dgm:gSegment X1="433" Y1="226" X2="999" Y2="226"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="DeptEmpAPI5" target="DeptEmpAPIMediator5/DeptEmpAPIMediator5" width="2">
+        <dgm:gSegment X1="168" Y1="285" X2="192" Y2="285"/>
+        <dgm:gSegment X1="192" Y1="285" X2="192" Y2="252"/>
+        <dgm:gSegment X1="192" Y1="252" X2="259" Y2="252"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="DeptEmpAPI6" target="DeptEmpAPIMediator6/DeptEmpAPIMediator6" width="2">
+        <dgm:gSegment X1="168" Y1="51" X2="500" Y2="51"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="DeptEmpAPIMediator6/updateEmployee" target="updateEmployee" width="2">
+        <dgm:gSegment X1="650" Y1="51" X2="999" Y2="51"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+</dgm:gDiagram>

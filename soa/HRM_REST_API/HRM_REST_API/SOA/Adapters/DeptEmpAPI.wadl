@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="DeptEmpAPI">HRM API RestService</doc>
+   <grammars>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI" elementFormDefault="qualified">
+            <element name="empty">
+                <complexType/>
+            </element>
+        </schema>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="DeptEmpAPI_getAllEmployees_response" schemaLocation="../Schemas/nxsd_empdept_employees_json.xsd"/>
+        </xsd:schema>
+   </grammars>
+   <resources>
+      <resource path="/employees">
+         <method name="GET" soa:wsdlOperation="getAllEmployees">
+            <request/>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:employees" xmlns:cns="DeptEmpAPI_getAllEmployees_response"/>
+            </response>
+         </method>
+      </resource>
+</resources>
+</application>

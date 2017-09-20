@@ -1,0 +1,30 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI2" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="DeptEmpAPI2">RestService</doc>
+   <grammars>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="DeptEmpAPI_getEmployeeDetails_response" schemaLocation="../Schemas/nxsd_empdept_employeeDetails_json.xsd"/>
+        </xsd:schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI2" elementFormDefault="qualified">
+            <element name="getEmployeeDetails_params">
+                <complexType>
+                    <sequence>
+                        <element name="employeeId" type="string"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+   </grammars>
+   <resources>
+      <resource path="/employees/{employeeId}">
+         <method name="GET" soa:wsdlOperation="getEmployeeDetails">
+            <request>
+               <param name="employeeId" style="template" soa:expression="$msg.request/tns:employeeId" default="" type="xsd:string"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:EmployeeRoot" xmlns:cns="DeptEmpAPI_getEmployeeDetails_response"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>

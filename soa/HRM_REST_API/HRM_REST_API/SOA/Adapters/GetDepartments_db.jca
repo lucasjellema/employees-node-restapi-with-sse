@@ -1,0 +1,13 @@
+<adapter-config name="GetDepartments" adapter="db" wsdlLocation="../WSDLs/GetDepartments.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="C##CLOUDACE" location="eis/DB/cloudacex"/>
+  <endpoint-interaction portType="GetDepartments_ptt" operation="GetDepartments">
+    <interaction-spec className="oracle.tip.adapter.db.DBStoredProcedureInteractionSpec">
+    <!--  <property name="SchemaName" value="C##CLOUDACE"/> -->
+      <property name="PackageName" value="EMPLOYEE_API"/>
+      <property name="ProcedureName" value="GET_DEPARTMENTS"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

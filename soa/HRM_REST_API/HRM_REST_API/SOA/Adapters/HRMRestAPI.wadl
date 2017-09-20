@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:tns="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/HRMRestAPI"
+             xmlns="http://wadl.dev.java.net/2009/02" xmlns:ns0="HrmRestAPI_CreateDepartments_request"
+             xmlns:ns1="RestEMPService_getEmployeeDetails_response">
+  <doc title="HRMRestAPI">RestService</doc>
+  <grammars>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/HRMRestAPI"
+            elementFormDefault="qualified">
+      <element name="empty">
+        <complexType/>
+      </element>
+    </schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="HrmRestAPI_getAllDepartments_response"
+                  schemaLocation="../Schemas/nxsd_departments_json.xsd"/>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="HrmRestAPI_CreateDepartments_request"
+                  schemaLocation="../Schemas/nxsd_createDepartmentJSON.xsd"/>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="HrmRestAPI_Result_response" schemaLocation="../Schemas/nxsd_RestResultJSON.xsd"/>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="HrmRestAPI_GetDepartmentDetails_response"
+                  schemaLocation="../Schemas/nxsd_getDepartmentDetailsJSON.xsd"/>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="EMPRestService_getEmployees_response" schemaLocation="../Schemas/nxsd_EmployeesJSON.xsd"/>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="EMPRestService_createEmployee_request"
+                  schemaLocation="../Schemas/nxsd_createEmployee.xsd"/>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="RestEMPService_getEmployeeDetails_response"
+                  schemaLocation="../Schemas/nxsd_EmployeeDetailsJSON.xsd"/>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="RestEMPService_getEmployeeDetails_response"
+                  schemaLocation="../Schemas/nxsd_EmployeeDetailsJSON.xsd"/>
+    </xsd:schema>
+  </grammars>
+  <resources>
+    <resource path="/departments">
+      <method name="GET" soa:wsdlOperation="GetDepartments">
+        <request/>
+        <response status="200">
+          <representation mediaType="application/json" element="cns:departments"
+                          xmlns:cns="HrmRestAPI_getAllDepartments_response"/>
+        </response>
+      </method>
+      <method name="POST" soa:wsdlOperation="CreateDepartment">
+        <request>
+          <representation mediaType="application/json" element="cns:Department"
+                          xmlns:cns="HrmRestAPI_CreateDepartments_request"/>
+        </request>
+        <response status="200">
+          <representation mediaType="application/json" element="cns:Result" xmlns:cns="HrmRestAPI_Result_response"/>
+        </response>
+      </method>
+    </resource>
+    <resource path="/departments/{departmentId}">
+      <method name="GET" soa:wsdlOperation="getDepartmentDetails">
+        <request>
+          <param name="departmentId" style="template" soa:expression="$msg.request/tns:departmentId" default=""
+                 type="xsd:string"/>
+        </request>
+        <response status="200">
+          <representation mediaType="application/json" element="cns:Department"
+                          xmlns:cns="HrmRestAPI_GetDepartmentDetails_response"/>
+        </response>
+      </method>
+    </resource>
+    <resource path="/employees">
+      <method name="GET" soa:wsdlOperation="getEmployees">
+        <request/>
+        <response status="200">
+          <representation mediaType="application/json" element="cns:Employees"
+                          xmlns:cns="EMPRestService_getEmployees_response"/>
+        </response>
+      </method>
+      <method name="POST" soa:wsdlOperation="createEmployee">
+        <request>
+          <representation mediaType="application/json" element="cns:Employee"
+                          xmlns:cns="EMPRestService_createEmployee_request"/>
+        </request>
+        <response status="204"/>
+      </method>
+    </resource>
+    <resource path="/employees/{employeeId}">
+      <method name="GET" soa:wsdlOperation="getEmployeeDetails">
+        <request>
+          <param name="employeeId" style="template" soa:expression="$msg.request/tns:employeeId" default=""
+                 type="xsd:string"/>
+        </request>
+        <response status="200">
+          <representation mediaType="application/json" element="cns:Employee"
+                          xmlns:cns="RestEMPService_getEmployeeDetails_response"/>
+        </response>
+      </method>
+    </resource>
+  </resources>
+</application>

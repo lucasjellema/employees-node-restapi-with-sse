@@ -1,0 +1,37 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="DeptEmpAPI6"
+     targetNamespace="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI6"
+     xmlns:tns="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI6"
+     xmlns:inp1="DeptEmpAPI_getEmployeeDetails_response"
+     xmlns:inp2="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI6"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+    <plnk:partnerLinkType name="DeptEmpAPI6">
+        <plnk:role name="DeptEmpAPI6Provider" portType="tns:DeptEmpAPI6_ptt"/>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="DeptEmpAPI_getEmployeeDetails_response" schemaLocation="../Schemas/nxsd_empdept_employeeDetails_json.xsd"/>
+        </xsd:schema>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI6"
+             elementFormDefault="qualified">
+            <element name="empty">
+                <complexType/>
+            </element>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="updateEmployee_inputMessage">
+        <wsdl:part name="request" element="inp1:EmployeeRoot"/>
+    </wsdl:message>
+    <wsdl:message name="Rest_EmptyMessage">
+        <wsdl:part name="Empty" element="tns:empty"/>
+    </wsdl:message>
+    <wsdl:portType name="DeptEmpAPI6_ptt">
+        <wsdl:operation name="updateEmployee">
+            <wsdl:input message="tns:updateEmployee_inputMessage"/>
+            <wsdl:output message="tns:Rest_EmptyMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

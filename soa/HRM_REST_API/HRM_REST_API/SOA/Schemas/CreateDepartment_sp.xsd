@@ -1,0 +1,30 @@
+<schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/sp/CreateDepartment" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/sp/CreateDepartment" elementFormDefault="qualified">
+   <element name="InputParameters">
+      <complexType>
+         <sequence>
+            <element name="P_DEPARTMENT" type="db:DEPARTMENT_T" db:index="1" db:type="Struct" minOccurs="0" nillable="true"/>
+         </sequence>
+      </complexType>
+   </element>
+   <element name="OutputParameters">
+      <complexType>
+         <sequence>
+            <element name="P_RESULT" type="string" db:index="2" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         </sequence>
+      </complexType>
+   </element>
+   <complexType name="DEPARTMENT_T">
+      <sequence>
+         <element name="ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="NAME" type="db:string50" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="LOCATION" type="db:string50" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="SALARY_SUM" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="EMPLOYEES_COUNT" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+      </sequence>
+   </complexType>
+   <simpleType name="string50">
+      <restriction base="string">
+         <maxLength value="50"/>
+      </restriction>
+   </simpleType>
+</schema>

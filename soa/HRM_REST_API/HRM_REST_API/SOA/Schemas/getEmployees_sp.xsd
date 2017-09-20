@@ -1,0 +1,34 @@
+<schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/sp/getEmployees" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/sp/getEmployees" elementFormDefault="qualified">
+   <element name="InputParameters">
+      <complexType>
+         <sequence>
+            <element name="P_DEPT_ID" type="decimal" db:index="1" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         </sequence>
+      </complexType>
+   </element>
+   <element name="OutputParameters">
+      <complexType>
+         <sequence>
+            <element name="GET_EMPLOYEES" type="db:EMPLOYEE_LIST_T" db:index="0" db:type="Array" minOccurs="0" nillable="true"/>
+         </sequence>
+      </complexType>
+   </element>
+   <complexType name="EMPLOYEE_LIST_T">
+      <sequence>
+         <element name="GET_EMPLOYEES_ITEM" type="db:EMPLOYEE_SUMMARY_T" db:type="Struct" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+      </sequence>
+   </complexType>
+   <complexType name="EMPLOYEE_SUMMARY_T">
+      <sequence>
+         <element name="ID" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         <element name="NAME" type="db:string50" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="JOB" type="db:string50" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         <element name="VOTES" type="decimal" db:type="NUMBER" minOccurs="0" nillable="true"/>
+      </sequence>
+   </complexType>
+   <simpleType name="string50">
+      <restriction base="string">
+         <maxLength value="50"/>
+      </restriction>
+   </simpleType>
+</schema>

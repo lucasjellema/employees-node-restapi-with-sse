@@ -1,0 +1,30 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI5" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="DeptEmpAPI5">Delete Employee</doc>
+   <grammars>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI5" elementFormDefault="qualified">
+            <element name="empty">
+                <complexType/>
+            </element>
+        </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/HRM_REST_API/HRM_REST_API/DeptEmpAPI5" elementFormDefault="qualified">
+            <element name="DeleteEmployee_params">
+                <complexType>
+                    <sequence>
+                        <element name="employeeId" type="string"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+   </grammars>
+   <resources>
+      <resource path="/employees/{employeeId}">
+         <method name="DELETE" soa:wsdlOperation="DeleteEmployee">
+            <request>
+               <param name="employeeId" style="template" soa:expression="$msg.request/tns:employeeId" default="" type="xsd:string"/>
+            </request>
+            <response status="204"/>
+         </method>
+      </resource>
+   </resources>
+</application>

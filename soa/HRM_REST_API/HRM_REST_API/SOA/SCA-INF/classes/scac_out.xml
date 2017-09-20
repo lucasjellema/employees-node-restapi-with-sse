@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/ns:composite/ns:component[@name='HrmMediator/HrmMediator']</loc>
+      <line/>
+      <col/>
+      <file>C:\atl-2017\API_REST_JSON_NODE\HRM_REST_API\HRM_REST_API\SOA\composite.xml</file>
+      <name>C:\atl-2017\API_REST_JSON_NODE\HRM_REST_API\HRM_REST_API\SOA\composite.xml</name>
+      <fix/>
+      <msg>The service "HrmMediator" exposed by component "HrmMediator" is not wired to/used by any other component.</msg>
+   </Fault>
+</Faults>
